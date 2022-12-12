@@ -1,2 +1,0 @@
-[web-group]
-172.31.5.77 ansible_ssh_private_key_file=/home/ubuntu/oregon.pem
