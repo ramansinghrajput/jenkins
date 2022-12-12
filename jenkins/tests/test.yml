@@ -1,0 +1,5 @@
+---
+- hosts: web-group
+  become: true
+  roles:
+    - jenkins
