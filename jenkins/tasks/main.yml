@@ -1,0 +1,25 @@
+---
+# tasks file for jenkins
+    - name: install java version 11
+      package:
+        name: openjdk-11-jre
+        state: present
+
+    - name: download jenkins repo
+      apt_key:
+        url: https://pkg.jenkins.io/debian-stable/jenkins.io.key
+        state: present
+    - name: configured repo
+      apt_repository:
+        repo: 'deb https://pkg.jenkins.io/debian-stable binary/'
+        state: present
+       
+    - name: Install jenkins
+      apt:
+        name: jenkins
+        state: latest
+
+    - name: start jenkins
+      service:
+        name: jenkins
+        state: started
